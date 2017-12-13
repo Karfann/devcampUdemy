@@ -40,6 +40,10 @@ class PortifoliosController < ApplicationController
         end
     end
 
+    def show
+        @portifolio_item = Portifolio.find(params[:id])
+    end
+
       private
 
         # Never trust parameters from the scary internet, only allow the white list through.

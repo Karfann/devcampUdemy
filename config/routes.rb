@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   resources :portifolios, except: [:show]
   get 'portifolio/:id', to: 'portifolios#show', as: 'portifolio_show'
   

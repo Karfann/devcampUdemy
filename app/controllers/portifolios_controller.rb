@@ -1,5 +1,7 @@
 class PortifoliosController < ApplicationController
 
+  before_action :set_portifolio, only: [:show, :edit, :update, :destroy]
+
     def index
         @portifolio_items = Portifolio.all
     end
@@ -24,12 +26,10 @@ class PortifoliosController < ApplicationController
       end
 
       def edit
-        @portifolio_item = Portifolio.find(params[:id])
       end
 
     def update
-        @portifolio_item = Portifolio.find(params[:id])
-
+        
         respond_to do |format|
           if @portifolio_item.update(portifolio_params)
             format.html { redirect_to portifolios_path, notice: 'The record successfully updated.' }
@@ -42,7 +42,6 @@ class PortifoliosController < ApplicationController
     end
 
     def destroy
-      @portifolio_item = Portifolio.find(params[:id])
       @portifolio_item.destroy
       respond_to do |format|
         format.html { redirect_to portifolios_url, notice: 'Portifolio was successfully destroyed.' }
@@ -51,13 +50,20 @@ class PortifoliosController < ApplicationController
     end
 
     def show
-        @portifolio_item = Portifolio.find(params[:id])
     end
 
       private
 
+        def set_portifolio
+          @portifolio_item = Portifolio.find(params[:id])
+        end
+
         # Never trust parameters from the scary internet, only allow the white list through.
         def portifolio_params
-            params.require(:portifolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+            params.require(:portifolio).permit( :title, 
+                                                :subtitle, 
+                                                :body, 
+                                                technologies_attributes: [:name]
+                                              )
         end
 end

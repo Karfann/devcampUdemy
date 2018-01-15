@@ -2,6 +2,8 @@ class PortifoliosController < ApplicationController
 
   before_action :set_portifolio, only: [:show, :edit, :update, :destroy]
 
+  layout 'portifolio'
+
     def index
         @portifolio_items = Portifolio.all
     end

@@ -1,5 +1,12 @@
 {
   "name": "DevcampPortfolio",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Karfann/devcampUdemy.git",
+  "author": "Karfann Nacif <karfannacif@gmail.com>",
+  "license": "MIT"
 }

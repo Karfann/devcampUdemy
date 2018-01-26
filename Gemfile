@@ -57,3 +57,5 @@ gem 'devise', '~> 4.4'
 gem 'bootstrap', '~> 4.0.0'
 
 #gem 'jquery-rails'
+
+gem 'nacif_view_tool', git: 'https://github.com/Karfann/nacif_view_tool'

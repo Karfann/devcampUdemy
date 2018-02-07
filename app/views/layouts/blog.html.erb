@@ -12,15 +12,11 @@
   </head>
 
   <body>
-    
+
     <%= render 'shared/blog_nav' %>
 
     <main role="main" class="container">
       <div class="row">
-
-        
-
-        <%= login_helper %>
       
         <%= yield %>
 
@@ -58,13 +54,15 @@
           </div>
         </aside><!-- /.blog-sidebar -->
 
-        <%= render 'shared/blog_footer' %>
-
         <%= source_helper("blog") %>
 
       </div><!-- /.row -->
 
+      
+
     </main><!-- /.container -->
+
+    <%= render 'shared/blog_footer' %>
 
     </body>
 </html>

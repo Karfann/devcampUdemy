@@ -62,14 +62,11 @@
       <%= link_to 'Write a New Blog', new_blog_path %>
     </h3>
   <% end %>
-  <%= render @blogs %>
+
+  <%= paginate @blogs %>
   
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
+  <%= render @blogs %>
 
-  <br>
-
+  <%= paginate @blogs %>
   
 </div><!-- /.blog-main -->

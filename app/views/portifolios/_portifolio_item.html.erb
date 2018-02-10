@@ -3,8 +3,7 @@
         <%= image_tag portifolio_item.thumb_image, class: "card-img-top", alt: "Card image cap" unless portifolio_item.thumb_image.nil? %>
         <div class="card-body">
             <p class="card-text">
-                <span><%= portifolio_item.title %></span><%= portifolio_item.subtitle %>
-                
+                <span><%= link_to portifolio_item.title, portifolio_show_path(portifolio_item) %></span> <%= portifolio_item.subtitle %>
             </p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -19,8 +18,3 @@
 </div>
 
 <%# <% link_to portifolio_item.title, portifolio_show_path(portifolio_item)  %>
-
-
-
-
-

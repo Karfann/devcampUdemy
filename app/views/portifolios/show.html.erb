@@ -1,9 +1,24 @@
-<%= image_tag @portifolio_item.main_image unless @portifolio_item.main_image.nil? %>
-<h1><%= @portifolio_item.title %></h1>
-<em><%= @portifolio_item.subtitle %></em>
-<p><%= @portifolio_item.body %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <%= image_tag @portifolio_item.main_image unless @portifolio_item.main_image.nil? %>
+        </div>
+        <div class="col">
+            <h1><%= @portifolio_item.title %></h1>
+            
+            <hr>
+            
+            <em><%= @portifolio_item.subtitle %></em>
+            <p><%= @portifolio_item.body %></p>
+            
+            <hr>
+            
+            <h3>Technologies used</h3>
+            
+            <% @portifolio_item.technologies.each do |tech| %>
+                <p><%= tech.name %></p>
+            <% end %>
 
-<h2>Technologies used</h2>
-<% @portifolio_item.technologies.each do |tech| %>
-    <p><%= tech.name %></p>
-<% end %>
+        </div>
+    </div>
+</div>

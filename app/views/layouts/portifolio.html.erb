@@ -17,7 +17,7 @@
      
     <main role="main">
       
-      <%= render 'shared/portifolio_masterhead'%>
+      <%= render 'shared/portifolio_masterhead' unless logged_in?(:site_admin) %>
 
       <%= yield %>
 

@@ -10,6 +10,7 @@ class Portifolio < ApplicationRecord
 
     scope :ruby_on_rails_portifolio_items, -> { where(subtitle: 'Ruby on Rails' )}
     scope :angular_portifolio_items, -> { where(subtitle: 'Angular' )}
+    scope :by_position, -> { order(:position) }
 
     after_initialize :set_defaults
 

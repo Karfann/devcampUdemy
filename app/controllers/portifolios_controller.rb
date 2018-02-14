@@ -7,6 +7,14 @@ class PortifoliosController < ApplicationController
       @portifolio_items = Portifolio.by_position
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
+  end
+
   def new
       @portifolio_item = Portifolio.new
       3.times { @portifolio_item.technologies.build}

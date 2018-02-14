@@ -3,7 +3,7 @@
 
         <%= link_to "Create new item", new_portifolio_path if logged_in?(:site_admin) %>
 
-        <div class="row">
+        <div class="row sortable">
             <%= render partial: 'portifolio_item', collection: @portifolio_items %>
         </div>
     </div>
